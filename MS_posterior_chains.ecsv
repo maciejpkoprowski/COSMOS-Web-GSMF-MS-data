@@ -1,5 +1,3 @@
-# %ECSV 1.0
-# ---
 # datatype:
 # - {name: sample, datatype: int64}
 # - {name: a_s0, datatype: float64}
@@ -7,17 +5,13 @@
 # - {name: a_M0, datatype: float64}
 # - {name: b_M0, datatype: float64}
 # - {name: gamma, datatype: float64}
-# meta: !!omap
 # - {description: 'Flattened star-forming main-sequence posterior samples for the COSMOS-Web mean-stacking analysis'}
 # - {model: 'logSFR = s0(z) - log10[1 + 10^(-gamma*(logM-logM0(z)))]'}
 # - {s0_redshift_evolution: 's0(z) = a_s0*log10(z) + b_s0'}
 # - {logM0_redshift_evolution: 'logM0(z) = a_M0*log10(z) + b_M0'}
 # - {logSFR_definition: 'log10(SFR/[M_sun yr^-1])'}
 # - {logM_definition: 'log10(M_star/M_sun)'}
-# - {gamma_mode: 'constant'}
-# - {eddington_pdf_correction: false}
 # - {note: 'Each row is one retained posterior sample from the MCMC chain.'}
-# schema: astropy-2.0
 sample a_s0 b_s0 a_M0 b_M0 gamma
 0 1.9158640949e+00 1.3062198412e+00 7.1668569115e-01 1.0067339162e+01 1.2560362963e+00
 1 2.0676415370e+00 1.3332955690e+00 8.0200302899e-01 1.0146618370e+01 1.2070755807e+00
