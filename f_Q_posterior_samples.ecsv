@@ -1,5 +1,3 @@
-# %ECSV 1.0
-# ---
 # datatype:
 # - {name: sample_id, datatype: int64}
 # - {name: a_A, datatype: float64}
@@ -11,13 +9,10 @@
 # - {name: a_sigma, datatype: float64}
 # - {name: b_sigma, datatype: float64}
 # - {name: c_sigma, datatype: float64}
-# meta: !!omap
 # - {description: 'Flattened post-burn-in MCMC posterior samples for the COSMOS-Web quiescent-fraction model.'}
 # - {model: 'f_Q(logM,z) = A(z) * exp[-0.5 * ((logM - mu(z))/sigma(z))^2]'}
 # - {parameter_evolution: 'p(z) = a_p * exp(b_p * z) + c_p for p in {A, mu, sigma}'}
 # - {fit_mass_range: 'log10(M_star/M_sun) >= 9.0'}
-# - {source: 'f_Q_mcmc_chains(1).txt'}
-# schema: astropy-2.0
 sample_id a_A b_A c_A a_mu b_mu c_mu a_sigma b_sigma c_sigma
 0 4.0808982713908231e+00 -2.0015285958539613e+00 1.9127906021267174e-01 6.8776632140233440e+00 -2.0173236275133668e+00 1.1010426059052906e+01 2.3865761003668879e+00 -1.4414442055509418e+00 5.4943305176867085e-01
 1 2.5718995796233859e+00 -1.4947487005988536e+00 1.6990180092787777e-01 4.2381194393329649e+00 -1.5242524573506515e+00 1.1005575275804835e+01 1.7065126980365370e+00 -1.1245287466988176e+00 5.1848406966411176e-01
