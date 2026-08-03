@@ -1,5 +1,3 @@
-# %ECSV 1.0
-# ---
 # datatype:
 # - {name: z_min, datatype: float64}
 # - {name: z_max, datatype: float64}
@@ -19,12 +17,10 @@
 # - {name: e_F500, unit: mJy, datatype: float64}
 # - {name: F850, unit: mJy, datatype: float64}
 # - {name: e_F850, unit: mJy, datatype: float64}
-# meta: !!omap
 # - {logM_definition: log10(M_star/M_sun)}
 # - {fluxes: Final de-blended FIR flux densities}
 # - {uncertainties: 1-sigma}
 # - {note: Negative flux densities are valid measurements}
-# schema: astropy-2.0
 z_min z_max z_mean logM_min logM_max logM_mean F100 e_F100 F160 e_F160 F250 e_F250 F350 e_F350 F500 e_F500 F850 e_F850
 0.50000 1.00000 0.76000 7.50000 8.25000 7.83000 -0.05245 0.01872 -0.07851 0.02607 -0.09399 0.04359 -0.01774 0.04568 -0.02625 0.03773 -0.00388 0.01111
 0.50000 1.00000 0.79000 8.25000 9.00000 8.59000 0.01428 0.02464 0.04049 0.03438 0.13158 0.03264 0.08404 0.05021 0.00398 0.03718 0.00836 0.01301
