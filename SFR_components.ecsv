@@ -1,5 +1,3 @@
-# %ECSV 1.0
-# ---
 # datatype:
 # - {name: z_min, datatype: float64}
 # - {name: z_max, datatype: float64}
@@ -13,13 +11,11 @@
 # - {name: e_log_L_NUV, datatype: float64}
 # - {name: log_SFR, datatype: float64}
 # - {name: e_log_SFR, datatype: float64}
-# meta: !!omap
 # - {logM: 'log10(M_star/M_sun)'}
 # - {log_luminosity: 'log10(L/L_sun)'}
 # - {log_SFR: 'log10(SFR/[M_sun yr^-1])'}
 # - {uncertainties: '1-sigma uncertainties in dex'}
 # - {note: 'nan log_L_IR values denote UV-only SFR estimates; bins below the adopted mass-completeness limits are omitted.'}
-# schema: astropy-2.0
 z_min z_max z_mean logM_min logM_max logM_mean log_L_IR e_log_L_IR log_L_NUV e_log_L_NUV log_SFR e_log_SFR
 0.500 1.000 0.760 7.500 8.250 7.830 nan nan 8.019 0.004 -1.566 0.004
 0.500 1.000 0.790 8.250 9.000 8.590 9.264 0.195 8.570 0.006 -0.647 0.111
