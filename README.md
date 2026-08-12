@@ -2,7 +2,7 @@
 
 Data products associated with the paper:
 
-**Koprowski, M. P., Sawant, P., & Lisiecki, K., _Stellar mass growth in COSMOS-Web: a mass-complete main sequence to $z~8$ and its consistency with GSMF evolution_.**
+**Koprowski, M. P., Sawant, P., & Lisiecki, K., _Stellar mass growth in COSMOS-Web: a mass-complete main sequence to z ~ 8 and its consistency with GSMF evolution_.**
 
 This repository contains the machine-readable measurements and posterior samples used in the analysis of the star-forming main sequence (MS), quiescent-galaxy fraction, and their connection to the evolution of the galaxy stellar mass function (GSMF).
 
@@ -21,9 +21,9 @@ Columns:
 - `z_min`, `z_max` — redshift-bin limits
 - `z_mean` — mean redshift of galaxies contributing to the stack
 - `logM_min`, `logM_max` — stellar-mass-bin limits
-- `logM_mean` — mean stellar mass in the bin, defined as $\log_{10}(M_\ast/M_\odot)$
+- `logM_mean` — mean logarithmic stellar mass, log10(M*/M_sun)
 - `F100`, `F160`, `F250`, `F350`, `F500`, `F850` — final de-blended stacked flux densities in mJy
-- `e_F100`, `e_F160`, `e_F250`, `e_F350`, `e_F500`, `e_F850` — corresponding $1\sigma$ uncertainties in mJy
+- `e_F100`, `e_F160`, `e_F250`, `e_F350`, `e_F500`, `e_F850` — corresponding 1σ uncertainties in mJy
 
 Negative flux densities are valid measurements and should not be interpreted as missing data.
 
@@ -36,10 +36,10 @@ Each row corresponds to one mass-complete redshift and stellar-mass bin.
 Columns:
 
 - `z_min`, `z_max`, `z_mean` — redshift-bin limits and mean redshift
-- `logM_min`, `logM_max`, `logM_mean` — stellar-mass-bin limits and mean stellar mass
-- `log_L_IR`, `e_log_L_IR` — $\log_{10}(L_{\rm IR}/L_\odot)$ and its $1\sigma$ uncertainty
-- `log_L_NUV`, `e_log_L_NUV` — $\log_{10}(L_{\rm NUV}/L_\odot)$ and its $1\sigma$ uncertainty
-- `log_SFR`, `e_log_SFR` — $\log_{10}[\mathrm{SFR}/(M_\odot\,\mathrm{yr}^{-1})]$ and its $1\sigma$ uncertainty
+- `logM_min`, `logM_max`, `logM_mean` — stellar-mass-bin limits and mean logarithmic stellar mass
+- `log_L_IR`, `e_log_L_IR` — log10(L_IR/L_sun) and its 1σ uncertainty
+- `log_L_NUV`, `e_log_L_NUV` — log10(L_NUV/L_sun) and its 1σ uncertainty
+- `log_SFR`, `e_log_SFR` — log10[SFR/(M_sun yr^-1)] and its 1σ uncertainty
 
 `nan` values of `log_L_IR` indicate bins for which no valid infrared luminosity could be derived; the corresponding SFR is therefore based on the unobscured UV component alone. Bins below the adopted stellar-mass-completeness limits are omitted.
 
@@ -49,29 +49,33 @@ Flattened posterior samples from the MCMC fit to the redshift-dependent star-for
 
 The adopted relation is
 
-$$
-\log_{10}(\mathrm{SFR})
+```math
+\psi(x,z)
 =
 s_0(z)
 -
 \log_{10}
 \left[
 1+
-10^{-\gamma[\log_{10}(M_\ast/M_\odot)-\log M_0(z)]}
+10^{-\gamma\left[x-x_0(z)\right]}
 \right],
-$$
+```
 
-with
+where
 
-$$
-s_0(z)=a_{s0}\log_{10}(z)+b_{s0},
-$$
+```math
+x \equiv \log_{10}(M_\ast/M_\odot),
+\qquad
+\psi \equiv \log_{10}\!\left[\mathrm{SFR}/(M_\odot\,\mathrm{yr}^{-1})\right],
+```
 
 and
 
-$$
-\log M_0(z)=a_{M0}\log_{10}(z)+b_{M0}.
-$$
+```math
+s_0(z)=a_{s_0}\log_{10}(z)+b_{s_0},
+\qquad
+x_0(z)=a_{M_0}\log_{10}(z)+b_{M_0}.
+```
 
 Columns:
 
@@ -91,18 +95,18 @@ Columns:
 - `z_min`, `z_max`, `z_center` — redshift-bin limits and center
 - `logM_min`, `logM_max`, `logM_center` — stellar-mass-bin limits and center
 - `f_Q` — measured quiescent fraction
-- `f_Q_err` — $1\sigma$ uncertainty
+- `f_Q_err` — 1σ uncertainty
 - `N_all` — total number of galaxies represented in the bin
 - `N_QG` — number of quiescent galaxies represented in the bin
-- `used_in_global_fit` — boolean flag indicating whether the measurement was included in the global $f_{\rm Q}$ fit
+- `used_in_global_fit` — boolean flag indicating whether the measurement was included in the global quiescent-fraction fit
 
-The global fit used measurements with $\log_{10}(M_\ast/M_\odot)\geq9.0$.
+The global fit used measurements with log10(M*/M_sun) >= 9.0.
 
 ### `f_Q_posterior_samples.ecsv`
 
 Flattened post-burn-in MCMC posterior samples for the global quiescent-fraction model,
 
-$$
+```math
 f_{\rm Q}(x,z)
 =
 A(z)
@@ -113,28 +117,22 @@ A(z)
 \frac{x-\mu(z)}{\sigma(z)}
 \right)^2
 \right],
-$$
+```
 
-where
+with
 
-$$
-x=\log_{10}(M_\ast/M_\odot)
-$$
-
-and
-
-$$
-p(z)=a_p\exp(b_pz)+c_p,
+```math
+p(z)=a_p\exp(b_p z)+c_p,
 \qquad
 p\in\{A,\mu,\sigma\}.
-$$
+```
 
 Columns:
 
 - `sample_id` — posterior-sample index
-- `a_A`, `b_A`, `c_A` — redshift-evolution parameters for $A(z)$
-- `a_mu`, `b_mu`, `c_mu` — redshift-evolution parameters for $\mu(z)$
-- `a_sigma`, `b_sigma`, `c_sigma` — redshift-evolution parameters for $\sigma(z)$
+- `a_A`, `b_A`, `c_A` — redshift-evolution parameters for A(z)
+- `a_mu`, `b_mu`, `c_mu` — redshift-evolution parameters for μ(z)
+- `a_sigma`, `b_sigma`, `c_sigma` — redshift-evolution parameters for σ(z)
 
 ## File format
 
@@ -160,7 +158,7 @@ The Zenodo material includes diagnostic products that are not required as machin
 
 If you use these data products, please cite the associated paper:
 
-Koprowski, M. P., Sawant, P., & Lisiecki, K., _Stellar mass growth in COSMOS-Web: a mass-complete main sequence to $z \sim 8$ and its consistency with GSMF evolution_, submitted to Astronomy & Astrophysics.
+Koprowski, M. P., Sawant, P., & Lisiecki, K., _Stellar mass growth in COSMOS-Web: a mass-complete main sequence to z ~ 8 and its consistency with GSMF evolution_, submitted to Astronomy & Astrophysics.
 
 The citation information should be updated after the paper receives an arXiv identifier and again after publication.
 
