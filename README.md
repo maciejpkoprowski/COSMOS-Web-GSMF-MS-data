@@ -2,7 +2,7 @@
 
 Data products associated with the paper:
 
-**Koprowski, M. P., Sawant, P., & Lisiecki, K., _Stellar mass growth in COSMOS-Web: a mass-complete main sequence to $z \sim 8$ and its consistency with GSMF evolution_.**
+**Koprowski, M. P., Sawant, P., & Lisiecki, K., _Stellar mass growth in COSMOS-Web: a mass-complete main sequence to $z~8$ and its consistency with GSMF evolution_.**
 
 This repository contains the machine-readable measurements and posterior samples used in the analysis of the star-forming main sequence (MS), quiescent-galaxy fraction, and their connection to the evolution of the galaxy stellar mass function (GSMF).
 
