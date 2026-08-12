@@ -145,23 +145,3 @@ from astropy.table import Table
 
 table = Table.read("SFR_components.ecsv", format="ascii.ecsv")
 ```
-
-## Supplementary material
-
-Supplementary figures and diagnostic plots associated with the analysis are archived separately on Zenodo:
-
-**DOI: 10.5281/zenodo.21648421**
-
-The Zenodo material includes diagnostic products that are not required as machine-readable tables in this repository.
-
-## Citation
-
-If you use these data products, please cite the associated paper:
-
-Koprowski, M. P., Sawant, P., & Lisiecki, K., _Stellar mass growth in COSMOS-Web: a mass-complete main sequence to z ~ 8 and its consistency with GSMF evolution_, submitted to Astronomy & Astrophysics.
-
-The citation information should be updated after the paper receives an arXiv identifier and again after publication.
-
-## License
-
-Please use the license specified for this repository and the corresponding Zenodo record.
