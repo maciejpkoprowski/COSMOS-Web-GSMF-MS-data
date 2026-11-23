@@ -1,5 +1,4 @@
 # datatype:
-# - {name: sample, datatype: int64}
 # - {name: a_s0, datatype: float64}
 # - {name: b_s0, datatype: float64}
 # - {name: a_M0, datatype: float64}
